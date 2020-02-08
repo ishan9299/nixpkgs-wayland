@@ -1,8 +1,7 @@
 {
   repo_git = "https://github.com/eXeC64/imv";
   branch = "master";
-  rev = "a222f6475b905bdd0f55752e1539ed17bcad0a77";
-  sha256 = "0gk8g178i961nn3bls75a8qpv6wvfvav6hd9lxca1skaikd33zdx";
-  revdate = "2019-12-21 22:54:26 +0000";
-  skip = true;
+  rev = "04ef9440fb079736020d796142de18008da3ba62";
+  sha256 = "0w3c3n9czv8qql61vyq7wrpb277xc9gdks7p1pn1ya4s417v791j";
+  revdate = "2020-02-08 00:29:25 +0000";
 }

@@ -1,4 +1,5 @@
 { stdenv, fetchFromGitHub
+, meson, ninja
 , freeimage, fontconfig, pkgconfig
 , asciidoc, docbook_xsl, libxslt, cmocka
 , librsvg, pango, libxkbcommon, wayland
@@ -17,12 +18,8 @@ stdenv.mkDerivation rec {
     sha256 = metadata.sha256;
   };
 
-  preBuild = ''
-    # Version is 4.0.1, but Makefile was not updated
-    sed -i 's/^VERSION/c\VERSION = ${metadata.rev}/' Makefile
-  '';
-
   nativeBuildInputs = [
+    meson ninja
     asciidoc
     cmocka
     docbook_xsl
@@ -40,7 +37,9 @@ stdenv.mkDerivation rec {
     icu
   ];
 
-  installFlags = [ "PREFIX=$(out)" "CONFIGPREFIX=$(out)/etc" ];
+  mesonFlags = [
+    "-Dlibnsgif=disabled"
+  ];
 
   postFixup = ''
     # The `bin/imv` script assumes imv-wayland or imv-x11 in PATH,

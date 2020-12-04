@@ -105,6 +105,7 @@
               wayfire = wayfire;
               wf-shell = wf-shell;
             };
+            wayfire-plugins-extra = prev.callPackage ./pkgs/wayfire-plugins-extra { wayfire = wayfire; };
           };
         in
           waylandPkgs // { inherit waylandPkgs; };

@@ -33,11 +33,9 @@ stdenv.mkDerivation rec {
     alsaLib glm gtkmm3
     gtk-layer-shell
     libpulseaudio
-    wayland libpng12
+    wayland librsvg
     wayland-protocols
     wayfire wf-config
-    libjpeg_original
-    librsvg
   ];
 
   enableParallelBuilding = true;

@@ -37,6 +37,12 @@ stdenv.mkDerivation rec {
     wayfire wf-config
   ];
 
+  enableParallelBuilding = true;
+
+  mesonFlags = [
+    "-Dpulse=enabled" "-Dwayland-logout=true"
+  ];
+
   meta = with stdenv.lib; {
     description = "A GTK3-based panel for wayfire";
     homepage = https://wayfire.org/;

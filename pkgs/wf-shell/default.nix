@@ -4,7 +4,7 @@
 , gtkmm3, wayfire, alsaLib
 , gtk-layer-shell, wf-config
 , libpulseaudio, glm
-, adwaita-icon-theme
+, gnome3
 }:
 
 let
@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ meson ninja pkgconfig ];
   buildInputs = [
-    adwaita-icon-theme
+    gnome3.adwaita-icon-theme
     alsaLib
     glm
     gtkmm3

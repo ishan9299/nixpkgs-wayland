@@ -30,15 +30,12 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ meson ninja pkgconfig ];
   buildInputs = [
     gnome3.adwaita-icon-theme
-    alsaLib
-    glm
-    gtkmm3
+    alsaLib glm gtkmm3
     gtk-layer-shell
     libpulseaudio
     wayland
     wayland-protocols
-    wayfire
-    wf-config
+    wayfire wf-config
   ];
 
   meta = with stdenv.lib; {

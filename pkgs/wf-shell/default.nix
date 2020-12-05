@@ -4,6 +4,7 @@
 , gtkmm3, wayfire, alsaLib
 , gtk-layer-shell, wf-config
 , libpulseaudio, glm
+, adwaita-icon-theme
 }:
 
 let
@@ -27,7 +28,18 @@ stdenv.mkDerivation rec {
   });
 
   nativeBuildInputs = [ meson ninja pkgconfig ];
-  buildInputs = [ wayland wayland-protocols gtkmm3 wayfire gtk-layer-shell libpulseaudio alsaLib glm wf-config ];
+  buildInputs = [
+    adwaita-icon-theme
+    alsaLib
+    glm
+    gtkmm3
+    gtk-layer-shell
+    libpulseaudio
+    wayland
+    wayland-protocols
+    wayfire
+    wf-config
+  ];
 
   meta = with stdenv.lib; {
     description = "A GTK3-based panel for wayfire";
